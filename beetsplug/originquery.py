@@ -8,7 +8,7 @@ import sys
 import yaml
 from collections import OrderedDict
 from beets import config, ui
-from beets.autotag.match import current_metadata
+from beets.util import get_most_common_tags as current_metadata 
 from beets.plugins import BeetsPlugin
 from pathlib import Path
 
