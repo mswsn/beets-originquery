@@ -3,6 +3,17 @@ beets-originquery
 
 Plugin for beets that uses supplemental files in imported directories to improve MusicBrainz matches for untagged data.
 
+About this fork
+---------------
+
+This is a fork of [x1ppy/beets-originquery](https://github.com/x1ppy/beets-originquery) with compatibility fixes for
+modern beets versions:
+
+* Fixed the `current_metadata` import, which was removed from `beets.autotag.match` in newer beets releases (it's now
+  `beets.util.get_most_common_tags`).
+* Fixed a crash (`ValueError: too many values to unpack`) on beets ≥ 2.14, where `get_most_common_tags` returns a
+  single value instead of a tuple. Older beets versions are still supported.
+
 Motivation
 ----------
 
@@ -37,7 +48,7 @@ beets manually:
 
 Once you have the latest and greatest beets, you can install this plugin:
 
-    $> pip install git+https://github.com/x1ppy/beets-originquery
+    $> pip install git+https://github.com/mswsn/beets-originquery
 
 Next, add the following section to your beets config file to enable improved MediaBrainz queries from tags:
 
